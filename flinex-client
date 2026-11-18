@@ -1,0 +1,26 @@
+name: build
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        dir: [mc1.20.1, mc1.21]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.12"
+      - run: gradle build
+        working-directory: ${{ matrix.dir }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: flinex-${{ matrix.dir }}
+          path: ${{ matrix.dir }}/build/libs/*.jar
