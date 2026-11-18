@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "flinex",
+  "version": "${version}",
+  "name": "Flinex Client",
+  "description": "Cliente de visuales y HUD con menu configurable (Right Shift).",
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": { "client": ["com.flinex.FlinexClient"] },
+  "mixins": ["flinex.mixins.json"],
+  "depends": { "fabricloader": ">=0.15.0", "minecraft": ">=1.21 <=1.21.1", "java": ">=21", "fabric-api": "*" }
+}

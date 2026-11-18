@@ -1,0 +1,20 @@
+Flinex Client - 1.20.1 y 1.21 (Fabric)
+
+Estructura
+  common/    codigo compartido por todas las versiones
+  mc1.20.1/  build para Minecraft 1.20.1 (Java 17)
+  mc1.21/    build para Minecraft 1.21 y 1.21.1 (Java 21)
+
+Compilar sin instalar nada (GitHub)
+1) Crea un repositorio en github.com y sube TODO el contenido de esta carpeta (incluida la carpeta oculta .github).
+2) Pestana Actions -> "build" -> Run workflow (tambien corre solo al subir).
+3) Al terminar, abre la ejecucion y baja los dos artifacts: flinex-mc1.20.1 y flinex-mc1.21.
+   Dentro de cada uno esta el .jar. Usa el que NO termina en -sources.
+4) Pon cada jar en la carpeta mods de su version (Fabric Loader + Fabric API de esa version).
+
+Compilar en tu PC (opcional)
+  cd mc1.20.1   (o mc1.21)
+  gradle build      (necesitas Gradle 8.10+ y Java 17 o 21)
+  el jar queda en build/libs/
+
+Uso: Right Shift = menu | C (mantener) = zoom | Config: .minecraft/config/flinex.json
